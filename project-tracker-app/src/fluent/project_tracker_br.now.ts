@@ -8,6 +8,6 @@ BusinessRule({
     script: projectTrackerBRScript,
     name: 'Project Tracker Business Tracker',
     order: 100,
-    when: 'after',
+    when: 'before',
     active: true,
 })
