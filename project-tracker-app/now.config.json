@@ -1,0 +1,6 @@
+{
+  "scope": "x_snc_proj_track",
+  "scopeId": "e0a782deb6494847856999063576676e",
+  "name": "Project Tracker App",
+  "tsconfigPath": "./src/server/tsconfig.json"
+}
