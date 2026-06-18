@@ -22,7 +22,7 @@ jobs:
         run: npm install -g @servicenow/sdk-cli
 
       - name: Compile & Package Scoped App
-        run: now-sdk build && now-sdk pack
+        run: npx now-sdk build && now-sdk pack
 
       - name: Authenticate and Install to Instance via Basic Auth
         env:
