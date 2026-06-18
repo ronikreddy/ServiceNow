@@ -1,0 +1,34 @@
+name: Build and Deploy ServiceNow App
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-with: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install ServiceNow SDK Globally
+        run: npm install -g @servicenow/sdk-cli
+
+      - name: Compile & Package Scoped App
+        run: now-sdk build && now-sdk pack
+
+      - name: Authenticate and Install to Instance via Basic Auth
+        env:
+          NOW_USERNAME: ${{ secrets.NOW_USERNAME }}
+          NOW_PASSWORD: ${{ secrets.NOW_PASSWORD }}
+          NOW_INSTANCE: ${{ secrets.NOW_INSTANCE_URL }}
+        run: |
+          now-sdk auth save pipeline_login --type basic --url $NOW_INSTANCE --username $NOW_USERNAME --password $NOW_PASSWORD
+          now-sdk install --credential pipeline_login
