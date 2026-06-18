@@ -57,6 +57,10 @@ declare global {
                         table: 'sys_module'
                         id: 'ef53224d63ce48939a8c1dbf93b43a74'
                     }
+                    project_client_script: {
+                        table: 'sys_script_client'
+                        id: 'd56f5d812646468fa424d2b8535dcdf4'
+                    }
                     project_tracker_br: {
                         table: 'sys_script'
                         id: 'c4c2449f836845188a9c978c0e939a5e'
