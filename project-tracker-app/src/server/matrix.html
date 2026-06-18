@@ -1,0 +1,23 @@
+<div class="matrix-container">
+  <h3>Incident Performance Matrix</h3>
+  <div class="table-responsive">
+    <table class="table table-bordered matrix-table">
+      <thead>
+        <tr>
+          <th class="corner-label">Priority / Impact</th>
+          <th ng-repeat="impact in data.impacts" class="impact-header">{{impact.label}}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="priority in data.priorities">
+          <td class="priority-label">{{priority.label}}</td>
+          <td ng-repeat="impact in data.impacts" 
+              ng-style="{'background-color': c.getColor(c.getCount(priority.value, impact.value))}"
+              class="matrix-cell">
+            <span class="count">{{c.getCount(priority.value, impact.value)}}</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

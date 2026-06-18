@@ -1,0 +1,54 @@
+.matrix-container {
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  margin: 15px;
+}
+
+.matrix-table {
+  margin-top: 20px;
+  text-align: center;
+  border-collapse: separate;
+  border-spacing: 2px;
+}
+
+.corner-label {
+  background-color: #343a40;
+  color: white;
+  text-align: center;
+  vertical-align: middle !important;
+}
+
+.impact-header {
+  background-color: #495057;
+  color: white;
+  text-align: center;
+}
+
+.priority-label {
+  font-weight: bold;
+  background-color: #f8f9fa;
+  text-align: left;
+  vertical-align: middle !important;
+  width: 150px;
+}
+
+.matrix-cell {
+  width: 120px;
+  height: 70px;
+  vertical-align: middle !important;
+  font-size: 1.3em;
+  font-weight: bold;
+  transition: transform 0.2s, background-color 0.3s;
+  cursor: pointer;
+}
+
+.matrix-cell:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.count {
+  display: block;
+}
