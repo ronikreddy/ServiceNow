@@ -13,6 +13,6 @@ ClientScript({
     isolate_script: false,
     type: 'onLoad',
     script: script`function onLoad() {
-        g_form.addInfoMessage("Hello work!");
+        g_form.addInfoMessage("hello new world");
     }`,
 })
