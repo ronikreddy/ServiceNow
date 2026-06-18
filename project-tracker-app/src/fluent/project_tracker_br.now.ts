@@ -3,8 +3,8 @@ import { projectTrackerBRScript } from '../server/projectTrackerBR'
 
 BusinessRule({
     $id: Now.ID['project_tracker_br'],
-    action: ['insert', 'update'],
-    table: 'incident',
+    action: ['insert'],
+    table: 'sc_task',
     script: projectTrackerBRScript,
     name: 'Project Tracker Business Tracker',
     order: 100,
