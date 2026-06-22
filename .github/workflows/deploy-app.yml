@@ -30,11 +30,10 @@ jobs:
       - name: Compile & Package Scoped App
         run: npx @servicenow/sdk build && npx @servicenow/sdk pack
 
-      - name: Authenticate and Deploy to Instance via Basic Auth
+      - name: Deploy App to ServiceNow Instance
         env:
-          NOW_USERNAME: ${{ secrets.NOW_USERNAME }}
-          NOW_PASSWORD: ${{ secrets.NOW_PASSWORD }}
-          NOW_INSTANCE: ${{ secrets.NOW_INSTANCE_URL }}
-        run: |
-          npx @servicenow/sdk auth save pipeline_login --type basic --url $NOW_INSTANCE --username $NOW_USERNAME --password $NOW_PASSWORD
-          npx @servicenow/sdk deploy --credential pipeline_login
+          SN_SDK_NODE_ENV: SN_SDK_CI_INSTALL
+          SN_SDK_INSTANCE_URL: ${{ secrets.NOW_INSTANCE_URL }}
+          SN_SDK_USER: ${{ secrets.NOW_USERNAME }}
+          SN_SDK_USER_PWD: ${{ secrets.NOW_PASSWORD }}
+        run: npx @servicenow/sdk install
