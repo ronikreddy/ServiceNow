@@ -15,6 +15,6 @@ ClientScript({
     script: script`function onLoad() {
         g_form.addInfoMessage("hello new world");
         g_form.addInfoMessage("Welcome to the new and improved Project Tracker App!");
-        g_form.addInfoMessage("Automated deployment is now working!");
+        g_form.addInfoMessage("Automated deployment is fully working on push!");
     }`,
 })
