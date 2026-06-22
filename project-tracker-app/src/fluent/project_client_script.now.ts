@@ -14,5 +14,6 @@ ClientScript({
     type: 'onLoad',
     script: script`function onLoad() {
         g_form.addInfoMessage("hello new world");
+        g_form.addInfoMessage("Welcome to the Project Tracker App!");
     }`,
 })
